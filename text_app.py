@@ -66,28 +66,3 @@ with col3:
 # Footer
 st.markdown("---")
 st.markdown("Made with ❤️ using Streamlit")
-import google.generativeai as genai
-
-# Replace with your actual API key from Google AI Studio
-API_KEY = "AIzaSyDYLEe3cYA9V74OYS-iayHEnZPuJTOyPEM"
-
-# Configure the API key
-genai.configure(api_key=API_KEY)
-
-# Create the model instance
-model = genai.GenerativeModel('gemini-pro')
-
-# Function to interact with Gemini
-def ask_gemini(prompt):
-    try:
-        response = model.generate_content(prompt)
-        return response.text
-    except Exception as e:
-        return f"Error: {e}"
-
-# Example usage
-question = "Explain how photosynthesis works in plants."
-answer = ask_gemini(question)
-print("Gemini Response:\n", answer)
-import openai
-
